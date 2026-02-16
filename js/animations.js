@@ -110,6 +110,10 @@
   revealOnScroll(".area-list div", { trigger: ".area-list", y: 18, stagger: 0.05, start: "top 84%" });
   revealOnScroll(".area-map-wrap", { trigger: ".area-card", y: 30, duration: 0.95, start: "top 78%" });
 
+  revealOnScroll("#testimonials .section-heading", { trigger: "#testimonials", y: 28, duration: 0.9, start: "top 82%" });
+  revealOnScroll(".testimonial-feature", { trigger: ".testimonials-layout", y: 30, duration: 0.95, start: "top 80%" });
+  revealOnScroll(".testimonial-card", { trigger: ".testimonial-stack", y: 20, stagger: 0.1, duration: 0.8, start: "top 84%" });
+
   revealOnScroll(".cta-card", { trigger: ".cta", y: 30, duration: 1.0, start: "top 80%" });
   if (ctaCard) {
     ScrollTrigger.create({
