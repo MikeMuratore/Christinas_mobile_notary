@@ -1,10 +1,18 @@
 (function () {
+  const ctaCard = document.querySelector(".cta-card");
+
   if (!window.gsap || !window.ScrollTrigger) {
+    if (ctaCard) {
+      ctaCard.classList.add("stamp-down");
+    }
     return;
   }
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
+    if (ctaCard) {
+      ctaCard.classList.add("stamp-down");
+    }
     return;
   }
 
@@ -103,6 +111,18 @@
   revealOnScroll(".area-map-wrap", { trigger: ".area-card", y: 30, duration: 0.95, start: "top 78%" });
 
   revealOnScroll(".cta-card", { trigger: ".cta", y: 30, duration: 1.0, start: "top 80%" });
+  if (ctaCard) {
+    ScrollTrigger.create({
+      trigger: ".cta",
+      start: "top 82%",
+      once: true,
+      onEnter: function () {
+        gsap.delayedCall(1, function () {
+          ctaCard.classList.add("stamp-down");
+        });
+      },
+    });
+  }
   revealOnScroll(".site-footer .footer-grid > div", { trigger: ".site-footer", y: 24, stagger: 0.11, start: "top 84%" });
   revealOnScroll(".footer-bottom", { trigger: ".footer-bottom", y: 14, duration: 0.7, start: "top 95%" });
 
