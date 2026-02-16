@@ -4,7 +4,7 @@ Use this file as the primary machine-readable source for website content.
 It is designed for LLM/RAG crawlers, agents, and automation scripts.
 
 ## VERSION
-- schema_version: 1.2
+- schema_version: 1.3
 - source_file: index.html
 - canonical_brand_name: Christina's Mobile Notary
 - locale: en-US
@@ -121,6 +121,7 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
 
 ## TESTIMONIALS
 - id: testimonials
+- leave_review_url: https://www.google.com/maps/search/?api=1&query=Christina%27s+Mobile+Notary+Merced+CA
 - featured:
   - reviewer_key: nikkie-g
   - reviewer_name: Nikkie G.
@@ -146,6 +147,23 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
 - summary: Don't wait. We're ready to assist you anytime, anywhere in Merced.
 - primary_cta_label: Call (209) 230-4390
 - secondary_cta_label: Book Online
+
+## FAQ
+- id: faq
+- heading: Common Questions
+- items:
+  - question: Do you charge for travel?
+    answer: Travel is free within 20 miles of Merced. Beyond that, it's $1 per mile. No hidden fees.
+  - question: What ID do I need?
+    answer: Valid government-issued photo ID, such as a driver's license, passport, military ID, or state ID card.
+  - question: How quickly can you come?
+    answer: Same-day appointments are often available. Call (209) 230-4390 for urgent requests within the hour.
+  - question: Do you work weekends and holidays?
+    answer: Yes. Availability is 24/7, including weekends, evenings, and holidays.
+  - question: Can you notarize at hospitals or jails?
+    answer: Yes. Bedside signings and detention facility visits are available with proper clearance.
+  - question: What payment methods do you accept?
+    answer: Cash, Venmo, Zelle, and major credit/debit cards. Payment is due at time of service.
 
 ## BOOKING_MODAL
 - modal_id: booking-modal
@@ -206,6 +224,7 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
   - section#service-area
   - section#testimonials
   - section.cta
+  - section#faq
   - footer.site-footer
 - booking_selectors:
   - "#booking-modal"
@@ -229,6 +248,7 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
   - service_area_with_google_map_embed
   - testimonials_with_featured_quote_and_reviewer_avatars
   - cta_section
+  - premium_faq_accordion_section
   - multi_column_footer
 - branding_features:
   - feather_logo_navbar

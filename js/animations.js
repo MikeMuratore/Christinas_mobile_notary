@@ -127,6 +127,9 @@
       },
     });
   }
+
+  revealOnScroll("#faq .section-eyebrow, #faq .faq-title", { trigger: "#faq", y: 24, stagger: 0.08, start: "top 84%" });
+  revealOnScroll("#faq .faq-item", { trigger: "#faq .faq-grid", y: 20, stagger: 0.08, duration: 0.8, start: "top 84%" });
   revealOnScroll(".site-footer .footer-grid > div", { trigger: ".site-footer", y: 24, stagger: 0.11, start: "top 84%" });
   revealOnScroll(".footer-bottom", { trigger: ".footer-bottom", y: 14, duration: 0.7, start: "top 95%" });
 
