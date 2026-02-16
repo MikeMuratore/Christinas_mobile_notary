@@ -91,20 +91,29 @@
   z-index: 10;
 }
 
-.hero-pill {
+.hero-reviews {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.55rem;
   width: fit-content;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.78rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: #f8f5ff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hero-reviews .stars {
+  letter-spacing: 0.08em;
+  font-size: 0.84rem;
+}
+
+.hero-reviews strong {
+  color: #ffffff;
+  font-weight: 800;
 }
 
 .status-dot {
@@ -348,6 +357,12 @@
   gap: 0.22rem;
 }
 
+.service-feature-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .service-feature-bars i {
   display: block;
   width: 3px;
@@ -358,6 +373,53 @@
 
 .service-feature-bars i.is-active {
   background: var(--service-tone);
+}
+
+.service-direct-book {
+  min-height: 1.8rem;
+  padding: 0 0.52rem;
+  border: 1px solid rgba(202, 208, 223, 0.95);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #505c74;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.22rem;
+  box-shadow: 0 8px 14px -12px rgba(11, 18, 32, 0.45);
+  transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.service-direct-book .material-symbols-outlined {
+  font-size: 0.94rem;
+  line-height: 1;
+}
+
+.service-direct-book-text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-direct-book:hover {
+  transform: translateY(-1px);
+  border-color: rgba(138, 23, 189, 0.42);
+  color: var(--service-tone);
+  box-shadow: 0 12px 18px -13px rgba(11, 18, 32, 0.48);
+}
+
+@media (max-width: 420px) {
+  .service-direct-book {
+    width: 1.8rem;
+    min-height: 1.8rem;
+    padding: 0;
+    gap: 0;
+  }
+
+  .service-direct-book-text {
+    display: none;
+  }
 }
 
 .service-feature-visual {
@@ -703,6 +765,24 @@
 
 .testimonials {
   padding: 6rem 0;
+}
+
+.testimonials-review-cta {
+  margin-top: 1.35rem;
+  min-height: 3rem;
+  padding: 0 1.35rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.testimonials-review-cta .google-gmark {
+  width: 1.78rem;
+  height: 1.78rem;
+  padding: 0.28rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 7px 14px -10px rgba(13, 9, 25, 0.55);
+  flex: none;
 }
 
 .testimonials-layout {

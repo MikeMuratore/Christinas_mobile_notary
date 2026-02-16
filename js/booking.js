@@ -61,12 +61,18 @@
     return true;
   }
 
-  function openModal() {
+  function openModal(presetService) {
     modal.hidden = false;
     document.body.style.overflow = "hidden";
     resetStepState();
     const serviceField = document.getElementById("booking-service");
     if (serviceField) {
+      if (presetService) {
+        const matchingOption = Array.from(serviceField.options).find((option) => option.value === presetService);
+        if (matchingOption) {
+          serviceField.value = presetService;
+        }
+      }
       serviceField.focus();
     }
   }
@@ -174,7 +180,9 @@
   }
 
   triggers.forEach((button) => {
-    button.addEventListener("click", openModal);
+    button.addEventListener("click", () => {
+      openModal(button.dataset.bookService || "");
+    });
   });
 
   closeButtons.forEach((button) => {

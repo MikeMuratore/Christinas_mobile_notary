@@ -47,7 +47,7 @@
     .set(".hero-actions .btn", { y: 18, autoAlpha: 0 })
     .from(".site-header", { y: -36, autoAlpha: 0, duration: 0.9 })
     .from(".brand-group, .main-nav a, .header-actions", { y: -18, autoAlpha: 0, duration: 0.55, stagger: 0.07 }, "-=0.55")
-    .from(".hero-pill", { y: 20, autoAlpha: 0, duration: 0.55 }, "-=0.2")
+    .from(".hero-reviews", { y: 20, autoAlpha: 0, duration: 0.55 }, "-=0.2")
     .from(".hero h1", { y: 22, autoAlpha: 0, duration: 0.78 }, "-=0.2")
     .from(".hero p", { y: 18, autoAlpha: 0, duration: 0.6 }, "-=0.42")
     .to(".hero-actions .btn", { y: 0, autoAlpha: 1, duration: 0.56, stagger: 0.08, clearProps: "opacity,visibility,transform" }, "-=0.38")
