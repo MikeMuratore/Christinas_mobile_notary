@@ -182,8 +182,9 @@
 .hero-image {
   position: relative;
   z-index: 10;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 4;
   object-fit: cover;
+  object-position: 50% 22%;
   border-radius: 1.3rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 24px 44px -28px rgba(9, 6, 25, 0.74);
@@ -456,6 +457,11 @@
   gap: 2rem;
 }
 
+.advantage .section-kicker-light {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 1px rgba(20, 8, 35, 0.35);
+}
+
 .advantage-item {
   display: flex;
   gap: 1.5rem;
@@ -479,7 +485,7 @@
 
 .advantage-item p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.84);
   line-height: 1.625;
 }
 
@@ -794,15 +800,15 @@
 
 .author-signature {
   display: inline-block;
-  margin-top: -0.02rem;
-  margin-bottom: 0.06rem;
-  color: #3f0f52;
-  font-family: "Alex Brush", cursive;
-  font-size: clamp(1.42rem, 2vw, 1.76rem);
+  margin-top: -0.08rem;
+  margin-bottom: 0.12rem;
+  color: #2f0a3f;
+  font-family: "Mr Dafoe", cursive;
+  font-size: clamp(1.55rem, 2.25vw, 2.05rem);
   line-height: 1;
-  letter-spacing: 0.008em;
-  transform: rotate(-1.2deg);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.01em;
+  transform: rotate(-2deg);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
 }
 
 .author-detail {
