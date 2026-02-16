@@ -998,14 +998,13 @@
 .footer-brand-icon {
   width: 2rem;
   height: 2rem;
-  border-radius: var(--radius-sm);
-  background: var(--primary);
   display: grid;
   place-items: center;
 }
 
-.footer-brand-icon .material-symbols-outlined {
-  font-size: 1.25rem;
+.footer-brand-icon .brand-logo-image {
+  width: 1.85rem;
+  height: 1.85rem;
 }
 
 .footer-brand h2 {

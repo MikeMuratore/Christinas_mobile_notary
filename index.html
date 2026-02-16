@@ -21,13 +21,13 @@
 
 <body>
     <header class="site-header">
-        <div class="container nav-row">
-            <div class="brand-group">
-                <div class="brand-icon">
-                    <img class="brand-logo-image" src="./assets/feather.svg" alt="" aria-hidden="true" />
+            <div class="container nav-row">
+                <div class="brand-group">
+                    <div class="brand-icon">
+                        <img class="brand-logo-image" src="./assets/feather.svg" alt="" aria-hidden="true" />
+                    </div>
+                    <h2 class="brand-title">Christina's Mobile Notary</h2>
                 </div>
-                <h2 class="brand-title">Christina's Mobile Notary</h2>
-            </div>
             <nav class="main-nav">
                 <a href="#services">Services</a>
                 <a href="#why-choose-us">Why Choose Us</a>
@@ -35,11 +35,25 @@
                 <a href="#service-area">Service Area</a>
             </nav>
             <div class="header-actions">
+                <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="mobile-nav-panel">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <a class="phone-chip" href="tel:2092304390">
                     <span class="material-symbols-outlined">call</span>
                     (209) 230-4390
                 </a>
                 <button class="btn btn-primary btn-header book-now-trigger" type="button">Book Now</button>
+            </div>
+        </div>
+        <div class="mobile-nav-panel" id="mobile-nav-panel" hidden>
+            <div class="container mobile-nav-inner">
+                <a href="#services">Services</a>
+                <a href="#why-choose-us">Why Choose Us</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#service-area">Service Area</a>
             </div>
         </div>
     </header>
@@ -85,6 +99,10 @@
         <section class="trust-bar section-muted">
             <div class="container trust-grid">
                 <div class="trust-stat">
+                    <span class="trust-value">4.9 &#9733; (114)</span>
+                    <span class="trust-label">On Google Reviews</span>
+                </div>
+                <div class="trust-stat">
                     <span class="trust-value">10+ Years</span>
                     <span class="trust-label">Experience</span>
                 </div>
@@ -95,10 +113,6 @@
                 <div class="trust-stat">
                     <span class="trust-value">Same Day</span>
                     <span class="trust-label">Availability</span>
-                </div>
-                <div class="trust-stat">
-                    <span class="trust-value">Bonded</span>
-                    <span class="trust-label">Licensed &amp; Insured</span>
                 </div>
             </div>
         </section>
@@ -633,7 +647,8 @@
             <div class="footer-grid">
                 <div class="footer-brand-col">
                     <div class="footer-brand">
-                        <div class="footer-brand-icon"><span class="material-symbols-outlined">verified_user</span>
+                        <div class="footer-brand-icon">
+                            <img class="brand-logo-image" src="./assets/feather.svg" alt="" aria-hidden="true" />
                         </div>
                         <h2>Christina's Notary</h2>
                     </div>
@@ -690,92 +705,119 @@
                 <p>Choose service details, share signer info, then continue to online scheduling.</p>
             </div>
             <form class="booking-form" id="booking-form">
-                <div class="booking-grid">
-                    <label class="booking-field">
-                        <span>Service Type</span>
-                        <select id="booking-service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="General Notary Work">General Notary Work</option>
-                            <option value="Loan Signing">Loan Signing</option>
-                            <option value="Hospital Visit">Hospital Visit</option>
-                            <option value="Jail Signing">Jail Signing</option>
-                            <option value="Apostille Service">Apostille Service</option>
-                            <option value="After-hours Appointment">After-hours Appointment</option>
-                        </select>
-                    </label>
-                    <label class="booking-field">
-                        <span>Preferred Timing</span>
-                        <select id="booking-time-preference" name="timePreference" required>
-                            <option value="Earliest available">Earliest available</option>
-                            <option value="Same day">Same day</option>
-                            <option value="Tomorrow">Tomorrow</option>
-                            <option value="This week">This week</option>
-                            <option value="After-hours">After-hours</option>
-                        </select>
-                    </label>
-                    <label class="booking-field booking-field-wide">
-                        <span>Appointment Address</span>
-                        <input id="booking-address" name="address" placeholder="Street, City, ZIP" required
-                            type="text" />
-                    </label>
-                    <label class="booking-field">
-                        <span>Document Type</span>
-                        <input id="booking-document-type" name="documentType" placeholder="e.g., POA, Loan Docs"
-                            required type="text" />
-                    </label>
-                    <label class="booking-field">
-                        <span>Number of Signers</span>
-                        <input id="booking-signers" min="1" name="signerCount" required type="number" value="1" />
-                    </label>
-                    <label class="booking-field">
-                        <span>Witness Needed?</span>
-                        <select id="booking-witness" name="witnessNeeded" required>
-                            <option value="No">No</option>
-                            <option value="Yes">Yes</option>
-                            <option value="Not sure">Not sure</option>
-                        </select>
-                    </label>
-                    <label class="booking-field">
-                        <span>Full Name</span>
-                        <input autocomplete="name" id="booking-name" name="name" required type="text" />
-                    </label>
-                    <label class="booking-field">
-                        <span>Email</span>
-                        <input autocomplete="email" id="booking-email" name="email" required type="email" />
-                    </label>
-                    <label class="booking-field">
-                        <span>Phone</span>
-                        <input autocomplete="tel" id="booking-phone" name="phone" placeholder="(209) 230-4390" required
-                            type="tel" />
-                    </label>
-                    <label class="booking-field booking-field-wide">
-                        <span>Special Notes</span>
-                        <textarea id="booking-notes" name="notes"
-                            placeholder="Access notes, urgency, language preference, etc."></textarea>
-                    </label>
+                <div class="booking-mobile-progress" aria-hidden="true">
+                    <span class="is-active">Service</span>
+                    <span>Signer</span>
+                    <span>Confirm</span>
                 </div>
 
-                <div class="booking-checks">
-                    <label><input id="booking-id-ready" name="idReady" required type="checkbox" /> Signer has valid
-                        photo ID ready</label>
-                </div>
+                <section class="booking-step is-active" data-booking-step="1">
+                    <div class="booking-grid">
+                        <label class="booking-field">
+                            <span>Service Type</span>
+                            <select id="booking-service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="General Notary Work">General Notary Work</option>
+                                <option value="Loan Signing">Loan Signing</option>
+                                <option value="Hospital Visit">Hospital Visit</option>
+                                <option value="Jail Signing">Jail Signing</option>
+                                <option value="Apostille Service">Apostille Service</option>
+                                <option value="After-hours Appointment">After-hours Appointment</option>
+                            </select>
+                        </label>
+                        <label class="booking-field">
+                            <span>Preferred Timing</span>
+                            <select id="booking-time-preference" name="timePreference" required>
+                                <option value="Earliest available">Earliest available</option>
+                                <option value="Same day">Same day</option>
+                                <option value="Tomorrow">Tomorrow</option>
+                                <option value="This week">This week</option>
+                                <option value="After-hours">After-hours</option>
+                            </select>
+                        </label>
+                        <label class="booking-field booking-field-wide">
+                            <span>Appointment Address</span>
+                            <input id="booking-address" name="address" placeholder="Street, City, ZIP" required
+                                type="text" />
+                        </label>
+                        <label class="booking-field">
+                            <span>Document Type</span>
+                            <input id="booking-document-type" name="documentType" placeholder="e.g., POA, Loan Docs"
+                                required type="text" />
+                        </label>
+                        <label class="booking-field">
+                            <span>Number of Signers</span>
+                            <input id="booking-signers" min="1" name="signerCount" required type="number" value="1" />
+                        </label>
+                        <label class="booking-field">
+                            <span>Witness Needed?</span>
+                            <select id="booking-witness" name="witnessNeeded" required>
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Not sure">Not sure</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="booking-step-controls">
+                        <button class="btn btn-primary" type="button" data-booking-next>Continue</button>
+                    </div>
+                </section>
 
-                <fieldset class="booking-payment">
-                    <legend>Payment Option (Optional, Recommended)</legend>
-                    <label><input checked name="paymentOption" type="radio" value="none" /> Pay at appointment</label>
-                    <label><input name="paymentOption" type="radio" value="deposit" /> Pay deposit now</label>
-                    <label><input name="paymentOption" type="radio" value="full" /> Pay in full now</label>
-                </fieldset>
+                <section class="booking-step" data-booking-step="2">
+                    <div class="booking-grid">
+                        <label class="booking-field">
+                            <span>Full Name</span>
+                            <input autocomplete="name" id="booking-name" name="name" required type="text" />
+                        </label>
+                        <label class="booking-field">
+                            <span>Email</span>
+                            <input autocomplete="email" id="booking-email" name="email" required type="email" />
+                        </label>
+                        <label class="booking-field">
+                            <span>Phone</span>
+                            <input autocomplete="tel" id="booking-phone" name="phone" placeholder="(209) 230-4390"
+                                required type="tel" />
+                        </label>
+                        <label class="booking-field booking-field-wide">
+                            <span>Special Notes</span>
+                            <textarea id="booking-notes" name="notes"
+                                placeholder="Access notes, urgency, language preference, etc."></textarea>
+                        </label>
+                    </div>
 
-                <div class="booking-policy">
-                    <p>Includes confirmations/reminders, travel-aware scheduling, reschedule options, and cancellation
-                        policy handling through online scheduler.</p>
-                </div>
+                    <div class="booking-checks">
+                        <label><input id="booking-id-ready" name="idReady" required type="checkbox" /> Signer has valid
+                            photo ID ready</label>
+                    </div>
+                    <div class="booking-step-controls">
+                        <button class="btn btn-outline" type="button" data-booking-back>Back</button>
+                        <button class="btn btn-primary" type="button" data-booking-next>Continue</button>
+                    </div>
+                </section>
 
-                <div class="booking-actions">
-                    <button class="btn btn-primary" type="submit">Continue To Online Scheduling</button>
-                    <a class="booking-call-link" href="tel:2092304390">Prefer phone booking? Call (209) 230-4390</a>
-                </div>
+                <section class="booking-step" data-booking-step="3">
+                    <fieldset class="booking-payment">
+                        <legend>Payment Option (Optional, Recommended)</legend>
+                        <label><input checked name="paymentOption" type="radio" value="none" /> Pay at
+                            appointment</label>
+                        <label><input name="paymentOption" type="radio" value="deposit" /> Pay deposit now</label>
+                        <label><input name="paymentOption" type="radio" value="full" /> Pay in full now</label>
+                    </fieldset>
+
+                    <div class="booking-policy">
+                        <p>Includes confirmations/reminders, travel-aware scheduling, reschedule options, and
+                            cancellation policy handling through online scheduler.</p>
+                    </div>
+
+                    <div class="booking-actions">
+                        <button class="btn btn-primary" type="submit">Continue To Online Scheduling</button>
+                        <a class="booking-call-link" href="tel:2092304390">Prefer phone booking? Call (209)
+                            230-4390</a>
+                    </div>
+                    <div class="booking-step-controls">
+                        <button class="btn btn-outline" type="button" data-booking-back>Back</button>
+                    </div>
+                </section>
             </form>
         </div>
     </div>

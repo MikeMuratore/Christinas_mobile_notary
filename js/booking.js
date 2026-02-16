@@ -13,14 +13,58 @@
   const form = document.getElementById("booking-form");
   const triggers = document.querySelectorAll(".book-now-trigger");
   const closeButtons = document.querySelectorAll("[data-close-booking]");
+  const dialog = modal ? modal.querySelector(".booking-dialog") : null;
+  const steps = form ? Array.from(form.querySelectorAll("[data-booking-step]")) : [];
+  const progressItems = form ? Array.from(form.querySelectorAll(".booking-mobile-progress span")) : [];
+  const nextButtons = form ? Array.from(form.querySelectorAll("[data-booking-next]")) : [];
+  const backButtons = form ? Array.from(form.querySelectorAll("[data-booking-back]")) : [];
+  const mobileStepQuery = window.matchMedia("(max-width: 760px)");
+  let activeStep = 0;
 
   if (!modal || !form || !triggers.length) {
     return;
   }
 
+  function isMobileStepMode() {
+    return mobileStepQuery.matches && steps.length > 0;
+  }
+
+  function syncStepState(stepIndex) {
+    activeStep = stepIndex;
+    steps.forEach((step, index) => {
+      step.classList.toggle("is-active", index === activeStep);
+    });
+    progressItems.forEach((item, index) => {
+      item.classList.toggle("is-active", index === activeStep);
+    });
+    if (dialog) {
+      dialog.scrollTop = 0;
+    }
+  }
+
+  function resetStepState() {
+    syncStepState(0);
+  }
+
+  function validateStep(stepIndex) {
+    const step = steps[stepIndex];
+    if (!step) {
+      return true;
+    }
+    const fields = step.querySelectorAll("input, select, textarea");
+    for (const field of fields) {
+      if (!field.checkValidity()) {
+        field.reportValidity();
+        return false;
+      }
+    }
+    return true;
+  }
+
   function openModal() {
     modal.hidden = false;
     document.body.style.overflow = "hidden";
+    resetStepState();
     const serviceField = document.getElementById("booking-service");
     if (serviceField) {
       serviceField.focus();
@@ -30,6 +74,7 @@
   function closeModal() {
     modal.hidden = true;
     document.body.style.overflow = "";
+    resetStepState();
   }
 
   function encodeQuery(params) {
@@ -136,6 +181,35 @@
     button.addEventListener("click", closeModal);
   });
 
+  nextButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!isMobileStepMode()) {
+        return;
+      }
+      if (!validateStep(activeStep)) {
+        return;
+      }
+      const nextIndex = Math.min(activeStep + 1, steps.length - 1);
+      syncStepState(nextIndex);
+    });
+  });
+
+  backButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!isMobileStepMode()) {
+        return;
+      }
+      const previousIndex = Math.max(activeStep - 1, 0);
+      syncStepState(previousIndex);
+    });
+  });
+
+  mobileStepQuery.addEventListener("change", () => {
+    if (!modal.hidden) {
+      resetStepState();
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !modal.hidden) {
       closeModal();
@@ -151,5 +225,50 @@
 
     const values = getFormValues();
     continueToScheduler(values);
+  });
+})();
+
+(function () {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".menu-toggle");
+  const panel = document.getElementById("mobile-nav-panel");
+
+  if (!header || !toggle || !panel) {
+    return;
+  }
+
+  const menuLinks = panel.querySelectorAll("a");
+  const desktopQuery = window.matchMedia("(min-width: 1024px)");
+
+  function setMenuState(isOpen) {
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    panel.hidden = !isOpen;
+    header.classList.toggle("menu-open", isOpen);
+  }
+
+  function closeMenu() {
+    setMenuState(false);
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    setMenuState(!isOpen);
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+    }
+  });
+
+  desktopQuery.addEventListener("change", (event) => {
+    if (event.matches) {
+      closeMenu();
+    }
   });
 })();
