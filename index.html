@@ -41,6 +41,10 @@
                     <span></span>
                     <span></span>
                 </button>
+                <div class="lang-switch" role="group" aria-label="Language switcher">
+                    <button class="lang-btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+                    <button class="lang-btn" type="button" data-lang="es" aria-pressed="false">ES</button>
+                </div>
                 <a class="phone-chip" href="tel:2092304390">
                     <span class="material-symbols-outlined">call</span>
                     (209) 230-4390
@@ -589,7 +593,7 @@
                             <path d="M20 12 H14.4" fill="none" stroke="#4285F4" stroke-width="3.2"
                                 stroke-linecap="round" />
                         </svg>
-                        <span>Leave a Review</span>
+                        <span class="review-cta-label">Leave a Review</span>
                     </a>
                 </div>
 
@@ -929,6 +933,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/booking.js"></script>
+    <script src="./js/i18n.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ Use this file as the primary machine-readable source for website content.
 It is designed for LLM/RAG crawlers, agents, and automation scripts.
 
 ## VERSION
-- schema_version: 1.3
+- schema_version: 1.4
 - source_file: index.html
 - canonical_brand_name: Christina's Mobile Notary
 - locale: en-US
@@ -280,6 +280,11 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
   - close_on_link_click: true
   - close_on_escape: true
   - auto_close_at_desktop_breakpoint: true
+- language_switcher_features:
+  - navbar_language_switcher: true
+  - supported_languages: en, es
+  - persists_selection_local_storage: true
+  - runtime_content_translation_without_reload: true
 - cta_stamp_features:
   - stamp_background_effect: true
   - scroll_triggered_stamp_down_animation: true
@@ -342,6 +347,8 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
 - cdn_scripts:
   - GSAP 3.12.5
   - ScrollTrigger 3.12.5
+- local_scripts:
+  - ./js/i18n.js
 
 ## UPDATE_RULES
 - Keep this file in sync whenever visible text, services, contact details, testimonials, or booking fields change.
