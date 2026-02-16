@@ -1,0 +1,355 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(186, 52, 229, 0.52) 0%, rgba(186, 52, 229, 0) 52%),
+    radial-gradient(120% 160% at 100% 100%, rgba(122, 22, 158, 0.46) 0%, rgba(122, 22, 158, 0) 58%),
+    linear-gradient(135deg, #3f095a 0%, #681187 44%, #9f24cd 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.nav-row {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: #f4f2ff;
+}
+
+.brand-icon .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+.brand-logo-image {
+  width: 1.85rem;
+  height: 1.85rem;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(16, 10, 34, 0.25));
+  opacity: 0.98;
+}
+
+.brand-title {
+  margin: 0;
+  color: #f4f2ff;
+  text-shadow: 0 1px 0 rgba(22, 18, 45, 0.32);
+  font-size: 1.125rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: rgba(247, 244, 255, 0.94);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.phone-chip {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.phone-chip:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.site-header .btn-primary {
+  background: #f4f0ff;
+  color: #3f0b58;
+  box-shadow: 0 14px 24px -10px rgba(15, 9, 38, 0.42);
+}
+
+.site-header .btn-primary:hover {
+  filter: brightness(1);
+  background: #ffffff;
+}
+
+.btn {
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 14px 24px -10px rgba(138, 23, 189, 0.5);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-outline:hover {
+  background: #f8fafc;
+}
+
+.btn-header {
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.btn-lg {
+  height: 3.5rem;
+  padding: 0 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.btn-xl {
+  min-height: 4rem;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.booking-modal[hidden] {
+  display: none;
+}
+
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+}
+
+.booking-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 22, 0.66);
+  backdrop-filter: blur(2px);
+}
+
+.booking-dialog {
+  position: relative;
+  width: min(980px, calc(100% - 1.5rem));
+  max-height: calc(100vh - 2rem);
+  margin: 1rem auto;
+  overflow: auto;
+  border-radius: 1.1rem;
+  background: #fff;
+  border: 1px solid #e6deef;
+  box-shadow: 0 30px 56px -20px rgba(18, 10, 35, 0.45);
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.booking-close {
+  position: sticky;
+  top: 0.1rem;
+  margin-left: auto;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 999px;
+  color: #4c0e69;
+  background: #f6ecff;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.booking-head h2 {
+  margin: 0;
+  color: #230536;
+  font-size: clamp(1.35rem, 1.6vw, 1.9rem);
+  letter-spacing: -0.02em;
+}
+
+.booking-head p {
+  margin: 0.45rem 0 0.9rem;
+  color: #5b6272;
+  font-size: 0.96rem;
+}
+
+.booking-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.booking-field {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.booking-field span {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5f6a7f;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  border: 1px solid #d8dceb;
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.7rem;
+  color: #0f172a;
+  background: #fff;
+}
+
+.booking-field textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.booking-field-wide {
+  grid-column: 1 / -1;
+}
+
+.booking-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  color: #3b4252;
+  font-size: 0.92rem;
+}
+
+.booking-checks label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.booking-payment {
+  margin: 0;
+  padding: 0.8rem;
+  border: 1px solid #e3deef;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.booking-payment legend {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5f6a7f;
+  padding: 0 0.3rem;
+}
+
+.booking-payment label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #334155;
+}
+
+.booking-policy p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #677286;
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.booking-call-link {
+  font-size: 0.9rem;
+  color: #5b1380;
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .phone-chip {
+    display: inline-flex;
+  }
+
+  .brand-title {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 639px) {
+  .brand-title {
+    display: none;
+  }
+}
