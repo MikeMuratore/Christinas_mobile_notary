@@ -19,26 +19,31 @@
   inset: -20% -12%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.34;
+  opacity: 0.22;
   background:
-    repeating-linear-gradient(
-      -26deg,
-      rgba(255, 255, 255, 0.12) 0 2px,
-      rgba(255, 255, 255, 0) 2px 20px
-    ),
+    repeating-linear-gradient(-26deg,
+      rgba(255, 255, 255, 0.14) 0 2px,
+      rgba(255, 255, 255, 0) 2px 24px),
     radial-gradient(closest-side, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 72%),
     radial-gradient(closest-side, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 72%);
   background-size: auto, 40% 40%, 34% 34%;
   background-position: 0 0, 20% 34%, 80% 66%;
-  mix-blend-mode: soft-light;
   animation: heroSheenFloat 14s linear infinite;
   will-change: transform, background-position;
 }
 
 .hero.section-white::before {
-  background: none;
-  opacity: 0;
-  animation: none;
+  background:
+    repeating-linear-gradient(62deg,
+      rgba(255, 255, 255, 0.1) 0 1px,
+      rgba(255, 255, 255, 0) 1px 14px),
+    radial-gradient(circle at 24% 32%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 76% 68%, rgba(26, 10, 44, 0.18) 0 1px, transparent 1px 100%);
+  background-size: auto, 3px 3px, 4px 4px;
+  background-position: 0 0, 0 0, 0 0;
+  opacity: 0.42;
+  animation: heroTexturePan 11s linear infinite;
+  will-change: background-position, transform;
 }
 
 @keyframes heroGradientDrift {
@@ -60,6 +65,16 @@
   100% {
     transform: translate3d(1.5%, 1.1%, 0);
     background-position: 56px -42px, 24% 30%, 76% 70%;
+  }
+}
+
+@keyframes heroTexturePan {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  100% {
+    background-position: 72px -54px, 16px -10px, -14px 10px;
   }
 }
 
@@ -994,6 +1009,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero {
+    animation: none;
+  }
+
+  .hero.section-white::before {
     animation: none;
   }
 
