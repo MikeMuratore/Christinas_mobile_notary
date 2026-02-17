@@ -50,7 +50,7 @@ It is designed for LLM/RAG crawlers, agents, and automation scripts.
 ## TRUST_BAR
 - google_reviews_rating: "4.9/5"
 - google_reviews_count: 114
-- experience: "10+ Years"
+- experience: "25+ Years"
 - coverage: Mobile Service Coverage
 - availability: Same Day
 

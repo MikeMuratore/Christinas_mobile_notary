@@ -36,7 +36,7 @@
 
     { selector: ".trust-grid .trust-stat:nth-child(1) .trust-value", type: "text", es: "Disponible 24/7" },
     { selector: ".trust-grid .trust-stat:nth-child(1) .trust-label", type: "text", es: "En Merced" },
-    { selector: ".trust-grid .trust-stat:nth-child(2) .trust-value", type: "text", es: "10+ Anos" },
+    { selector: ".trust-grid .trust-stat:nth-child(2) .trust-value", type: "text", es: "25+ Anos" },
     { selector: ".trust-grid .trust-stat:nth-child(2) .trust-label", type: "text", es: "Experiencia" },
     { selector: ".trust-grid .trust-stat:nth-child(3) .trust-value", type: "text", es: "Movil" },
     { selector: ".trust-grid .trust-stat:nth-child(3) .trust-label", type: "text", es: "Cobertura de Servicio" },
