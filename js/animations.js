@@ -71,6 +71,7 @@
   gsap.registerPlugin(ScrollTrigger);
 
   const baseEase = "power3.out";
+  const skipHeroTimelineOnMobile = window.matchMedia("(max-width: 767px)").matches;
 
   function revealOnScroll(selector, options) {
     const nodes = gsap.utils.toArray(selector);
@@ -93,20 +94,27 @@
     });
   }
 
-  // Refined first-impression timeline.
-  const heroTl = gsap.timeline({ defaults: { ease: baseEase } });
-  heroTl
-    .set(".hero-bg-video", { autoAlpha: 0 })
-    .set(".hero-actions .btn", { y: 18, autoAlpha: 0 })
-    .to(".hero-bg-video", { autoAlpha: 1, duration: 0.65 }, 0.18)
-    .from(".site-header", { y: -36, autoAlpha: 0, duration: 0.9 })
-    .from(".brand-group, .main-nav a, .header-actions", { y: -18, autoAlpha: 0, duration: 0.55, stagger: 0.07 }, "-=0.55")
-    .from(".hero-reviews", { y: 20, autoAlpha: 0, duration: 0.55 }, "-=0.2")
-    .from(".hero h1", { y: 22, autoAlpha: 0, duration: 0.78 }, "-=0.2")
-    .from(".hero p", { y: 18, autoAlpha: 0, duration: 0.6 }, "-=0.42")
-    .to(".hero-actions .btn", { y: 0, autoAlpha: 1, duration: 0.56, stagger: 0.08, clearProps: "opacity,visibility,transform" }, "-=0.38")
-    .from(".hero-visual", { y: 22, autoAlpha: 0, duration: 0.85 }, "-=0.55")
-    .from(".trust-card", { y: 14, autoAlpha: 0, duration: 0.55 }, "-=0.35");
+  if (skipHeroTimelineOnMobile) {
+    if (heroBgVideo) {
+      heroBgVideo.style.opacity = "1";
+      heroBgVideo.style.visibility = "visible";
+    }
+  } else {
+    // Refined first-impression timeline.
+    const heroTl = gsap.timeline({ defaults: { ease: baseEase } });
+    heroTl
+      .set(".hero-bg-video", { autoAlpha: 0 })
+      .set(".hero-actions .btn", { y: 18, autoAlpha: 0 })
+      .to(".hero-bg-video", { autoAlpha: 1, duration: 0.65 }, 0.18)
+      .from(".site-header", { y: -36, autoAlpha: 0, duration: 0.9 })
+      .from(".brand-group, .main-nav a, .header-actions", { y: -18, autoAlpha: 0, duration: 0.55, stagger: 0.07 }, "-=0.55")
+      .from(".hero-reviews", { y: 20, autoAlpha: 0, duration: 0.55 }, "-=0.2")
+      .from(".hero h1", { y: 22, autoAlpha: 0, duration: 0.78 }, "-=0.2")
+      .from(".hero p", { y: 18, autoAlpha: 0, duration: 0.6 }, "-=0.42")
+      .to(".hero-actions .btn", { y: 0, autoAlpha: 1, duration: 0.56, stagger: 0.08, clearProps: "opacity,visibility,transform" }, "-=0.38")
+      .from(".hero-visual", { y: 22, autoAlpha: 0, duration: 0.85 }, "-=0.55")
+      .from(".trust-card", { y: 14, autoAlpha: 0, duration: 0.55 }, "-=0.35");
+  }
 
   // Luxury subtle float.
   gsap.to(".hero-visual-frame", {
