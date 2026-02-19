@@ -127,7 +127,9 @@
     { selector: ".testimonial-stack .testimonial-card:nth-child(3) .testimonial-chip", type: "text", es: "Notaria General" },
 
     { selector: ".cta-card h2", type: "text", es: "Necesita un Notario Ahora?" },
-    { selector: ".cta-card p", type: "text", es: "No espere. Estamos listos para ayudarle en cualquier momento y lugar en Merced." },
+    { selector: ".cta-card .cta-points li:nth-child(1) span:last-child", type: "text", es: "Despacho rapido para firmas urgentes" },
+    { selector: ".cta-card .cta-points li:nth-child(2) span:last-child", type: "text", es: "Licenciada, con fianza y precisa en cada detalle" },
+    { selector: ".cta-card .cta-points li:nth-child(3) span:last-child", type: "text", es: "Atendiendo Merced y comunidades cercanas" },
     { selector: ".cta-actions .book-now-trigger", type: "text", es: "Reservar En Linea" },
 
     { selector: "#faq .section-eyebrow", type: "text", es: "Preguntas Frecuentes" },
