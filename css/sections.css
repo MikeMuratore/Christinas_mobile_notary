@@ -1736,6 +1736,8 @@
 
   .cta-copy {
     gap: 0.95rem;
+    opacity: 0;
+    transform: translateY(-54px) scale(1.38) rotate(-3deg);
   }
 
   .cta-card .cta-copy {
@@ -1803,5 +1805,12 @@
 
   .cta-card.stamp-down .cta-copy {
     animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cta-card .cta-copy {
+    opacity: 1;
+    transform: none;
   }
 }
