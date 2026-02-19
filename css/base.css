@@ -27,12 +27,29 @@ body {
   padding: 0;
 }
 
+html {
+  background: #2b1140;
+}
+
 body {
+  position: relative;
   font-family: "Satoshi", "Inter", sans-serif;
   color: var(--text);
   background: var(--bg-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2b1140;
+  pointer-events: none;
+  z-index: 2147483647;
 }
 
 img {
