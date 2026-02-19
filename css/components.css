@@ -8,6 +8,14 @@
     linear-gradient(135deg, #3f095a 0%, #681187 44%, #9f24cd 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(12px);
+  transition: background 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease, box-shadow 220ms ease;
+}
+
+.site-header.is-transparent {
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .nav-row {

@@ -1,7 +1,8 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding: 3rem 0 5rem;
+  margin-top: -4.5rem;
+  padding: calc(3rem + 4.5rem) 0 5rem;
   overflow: hidden;
   background:
     radial-gradient(120% 120% at 8% 12%, rgba(186, 52, 229, 0.5) 0%, rgba(186, 52, 229, 0) 53%),
@@ -11,6 +12,17 @@
   background-position: 6% 8%, 92% 94%, 50% 50%;
   animation: heroGradientDrift 34s ease-in-out infinite alternate;
   will-change: background-position;
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -34,13 +46,14 @@
 
 .hero.section-white::before {
   background:
+    linear-gradient(180deg, rgba(10, 6, 24, 0.34) 0%, rgba(10, 6, 24, 0.34) 100%),
     repeating-linear-gradient(62deg,
       rgba(255, 255, 255, 0.1) 0 1px,
       rgba(255, 255, 255, 0) 1px 14px),
     radial-gradient(circle at 24% 32%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 100%),
     radial-gradient(circle at 76% 68%, rgba(26, 10, 44, 0.18) 0 1px, transparent 1px 100%);
-  background-size: auto, 3px 3px, 4px 4px;
-  background-position: 0 0, 0 0, 0 0;
+  background-size: 100% 100%, auto, 3px 3px, 4px 4px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
   opacity: 0.42;
   animation: heroTexturePan 11s linear infinite;
   will-change: background-position, transform;
@@ -70,11 +83,11 @@
 
 @keyframes heroTexturePan {
   0% {
-    background-position: 0 0, 0 0, 0 0;
+    background-position: 0 0, 0 0, 0 0, 0 0;
   }
 
   100% {
-    background-position: 72px -54px, 16px -10px, -14px 10px;
+    background-position: 0 0, 72px -54px, 16px -10px, -14px 10px;
   }
 }
 
@@ -189,6 +202,8 @@
 }
 
 .hero-image {
+  display: block;
+  width: 100%;
   position: relative;
   z-index: 10;
   aspect-ratio: 5 / 4;

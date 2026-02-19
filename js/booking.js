@@ -238,6 +238,7 @@
 
 (function () {
   const header = document.querySelector(".site-header");
+  const hero = document.querySelector(".hero");
   const toggle = document.querySelector(".menu-toggle");
   const panel = document.getElementById("mobile-nav-panel");
 
@@ -279,4 +280,18 @@
       closeMenu();
     }
   });
+
+  function syncHeaderTransparency() {
+    if (!hero) {
+      return;
+    }
+    const heroRect = hero.getBoundingClientRect();
+    const headerHeight = header.offsetHeight || 72;
+    const isOverHero = heroRect.top <= headerHeight && heroRect.bottom > headerHeight;
+    header.classList.toggle("is-transparent", isOverHero);
+  }
+
+  syncHeaderTransparency();
+  window.addEventListener("scroll", syncHeaderTransparency, { passive: true });
+  window.addEventListener("resize", syncHeaderTransparency);
 })();
