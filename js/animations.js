@@ -1,6 +1,51 @@
 (function () {
   const ctaCard = document.querySelector(".cta-card");
   const heroBgVideo = document.querySelector(".hero-bg-video");
+  let heroVideoPlayAttempted = false;
+
+  function tryPlayHeroVideo() {
+    if (!heroBgVideo) {
+      return;
+    }
+
+    heroBgVideo.muted = true;
+    heroBgVideo.defaultMuted = true;
+    heroBgVideo.playsInline = true;
+    heroBgVideo.setAttribute("playsinline", "");
+    heroBgVideo.setAttribute("webkit-playsinline", "");
+    heroBgVideo.preload = "auto";
+
+    const playPromise = heroBgVideo.play();
+    heroVideoPlayAttempted = true;
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function () {
+        // Ignore autoplay rejections; follow-up attempts run on user gestures.
+      });
+    }
+  }
+
+  if (heroBgVideo) {
+    tryPlayHeroVideo();
+
+    if (heroBgVideo.readyState < 2) {
+      heroBgVideo.addEventListener("loadeddata", tryPlayHeroVideo, { once: true });
+      heroBgVideo.addEventListener("canplay", tryPlayHeroVideo, { once: true });
+    }
+
+    ["pointerdown", "touchstart", "click"].forEach(function (eventName) {
+      window.addEventListener(eventName, function () {
+        if (!heroVideoPlayAttempted || heroBgVideo.paused) {
+          tryPlayHeroVideo();
+        }
+      }, { once: true, passive: true });
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && heroBgVideo.paused) {
+        tryPlayHeroVideo();
+      }
+    });
+  }
 
   if (!window.gsap || !window.ScrollTrigger) {
     if (heroBgVideo) {
