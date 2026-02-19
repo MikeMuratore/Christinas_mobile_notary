@@ -1,7 +1,11 @@
 (function () {
   const ctaCard = document.querySelector(".cta-card");
+  const heroBgVideo = document.querySelector(".hero-bg-video");
 
   if (!window.gsap || !window.ScrollTrigger) {
+    if (heroBgVideo) {
+      heroBgVideo.style.opacity = "1";
+    }
     if (ctaCard) {
       ctaCard.classList.add("stamp-down");
     }
@@ -10,6 +14,9 @@
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
+    if (heroBgVideo) {
+      heroBgVideo.style.opacity = "1";
+    }
     if (ctaCard) {
       ctaCard.classList.add("stamp-down");
     }
@@ -44,7 +51,9 @@
   // Refined first-impression timeline.
   const heroTl = gsap.timeline({ defaults: { ease: baseEase } });
   heroTl
+    .set(".hero-bg-video", { autoAlpha: 0 })
     .set(".hero-actions .btn", { y: 18, autoAlpha: 0 })
+    .to(".hero-bg-video", { autoAlpha: 1, duration: 0.65 }, 0.18)
     .from(".site-header", { y: -36, autoAlpha: 0, duration: 0.9 })
     .from(".brand-group, .main-nav a, .header-actions", { y: -18, autoAlpha: 0, duration: 0.55, stagger: 0.07 }, "-=0.55")
     .from(".hero-reviews", { y: 20, autoAlpha: 0, duration: 0.55 }, "-=0.2")
