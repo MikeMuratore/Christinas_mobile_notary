@@ -176,29 +176,48 @@
 
 .hero-visual {
   position: relative;
-  padding: 0.85rem;
-  border-radius: 1.8rem;
+  padding: 1rem 1rem 1.2rem;
+  border-radius: 1.9rem 2.8rem 1.5rem 2.4rem;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.08) 100%),
-    rgba(30, 12, 45, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  box-shadow: 0 24px 54px -28px rgba(12, 7, 30, 0.72);
-  backdrop-filter: blur(5px);
+    radial-gradient(140% 150% at 8% 8%, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 54%),
+    linear-gradient(132deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 45%, rgba(19, 7, 34, 0.34) 100%),
+    rgba(29, 12, 46, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  box-shadow:
+    0 34px 68px -34px rgba(7, 4, 22, 0.86),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(7px);
+  overflow: visible;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.9rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(235, 216, 255, 0.86) 50%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .hero-visual-frame {
   position: absolute;
-  inset: 0.42rem;
-  border-radius: 1.45rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  inset: 0.58rem 0.56rem 0.72rem;
+  border-radius: 1.55rem 2.35rem 1.15rem 1.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background:
+    linear-gradient(130deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.03) 54%, rgba(24, 8, 38, 0.25) 100%);
+  clip-path: polygon(0 0, 91% 0, 100% 11%, 100% 100%, 9% 100%, 0 88%);
   transform: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
 }
 
 .hero-visual:hover .hero-visual-frame {
-  opacity: 0.75;
+  opacity: 0.86;
+  transform: translateY(-1px);
 }
 
 .hero-image {
@@ -209,9 +228,11 @@
   aspect-ratio: 5 / 4;
   object-fit: cover;
   object-position: 50% 22%;
-  border-radius: 1.3rem;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 24px 44px -28px rgba(9, 6, 25, 0.74);
+  border-radius: 1.25rem 2rem 1rem 1.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 28px 52px -28px rgba(7, 4, 19, 0.82),
+    0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
 .trust-card {
