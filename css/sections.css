@@ -990,43 +990,73 @@
 }
 
 .cta {
-  padding: 6rem 0;
+  padding: 5.6rem 0 6.4rem;
 }
 
 .cta-wrap {
-  max-width: 56rem;
-  text-align: center;
+  max-width: 72rem;
 }
 
 .cta-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 3rem;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(138, 23, 189, 0.24);
-  background: rgba(138, 23, 189, 0.07);
+  padding: 1.4rem;
+  border-radius: 1.75rem 2.4rem 1.7rem 2.2rem;
+  border: 1px solid rgba(138, 23, 189, 0.26);
+  background:
+    radial-gradient(140% 120% at 100% 0%, rgba(219, 174, 255, 0.44) 0%, rgba(219, 174, 255, 0) 56%),
+    radial-gradient(120% 160% at 0% 100%, rgba(138, 23, 189, 0.13) 0%, rgba(138, 23, 189, 0) 60%),
+    linear-gradient(132deg, #fefcff 0%, #f9f4ff 40%, #f4ebff 100%);
+  box-shadow:
+    0 30px 46px -36px rgba(35, 11, 58, 0.74),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
 }
 
 .cta-card::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(68%, 390px);
+  left: 78%;
+  top: 48%;
+  width: min(45%, 295px);
   aspect-ratio: 1 / 1;
-  transform: translate(-50%, -120%) rotate(-8deg) scale(1.42);
+  transform: translate(-50%, -130%) rotate(-16deg) scale(1.35);
   z-index: 0;
   pointer-events: none;
   opacity: 0;
   filter: blur(1.8px);
   border-radius: 999px;
-  border: 8px solid rgba(138, 23, 189, 0.7);
+  border: 8px solid rgba(138, 23, 189, 0.76);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(138, 23, 189, 0.16) 0 46%, rgba(138, 23, 189, 0) 47% 100%);
   box-shadow:
-    inset 0 0 0 16px rgba(138, 23, 189, 0.13),
-    inset 0 0 0 34px rgba(138, 23, 189, 0.22),
-    0 16px 22px -18px rgba(52, 8, 70, 0.5);
+    inset 0 0 0 14px rgba(138, 23, 189, 0.12),
+    inset 0 0 0 32px rgba(138, 23, 189, 0.24),
+    0 22px 28px -20px rgba(52, 8, 70, 0.56);
   transform-origin: 50% 50%;
+}
+
+.cta-card::after {
+  content: "NOTORIZED";
+  position: absolute;
+  left: 78%;
+  top: 48%;
+  transform: translate(-50%, -50%) rotate(-16deg);
+  width: min(45%, 295px);
+  text-align: center;
+  color: rgba(94, 10, 130, 0.7);
+  font-family: "Satoshi", "Inter", sans-serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow:
+    1px 0 0 rgba(94, 10, 130, 0.5),
+    -1px 0 0 rgba(94, 10, 130, 0.35),
+    0 1px 0 rgba(94, 10, 130, 0.35),
+    0 -1px 0 rgba(94, 10, 130, 0.2);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cta-card.stamp-down::before {
@@ -1035,31 +1065,31 @@
 
 @keyframes ctaStampDown {
   0% {
-    transform: translate(-50%, -120%) rotate(-8deg) scale(1.42);
+    transform: translate(-50%, -130%) rotate(-16deg) scale(1.35);
     opacity: 0;
     filter: blur(1.8px);
   }
 
   48% {
-    transform: translate(-50%, -52%) rotate(-10deg) scale(0.78);
+    transform: translate(-50%, -50%) rotate(-14deg) scale(0.8);
     opacity: 0.82;
     filter: blur(0.3px);
   }
 
   64% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(1.08);
+    transform: translate(-50%, -50%) rotate(-14deg) scale(1.08);
     opacity: 0.63;
     filter: blur(0.1px);
   }
 
   78% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(0.96);
+    transform: translate(-50%, -50%) rotate(-14deg) scale(0.95);
     opacity: 0.72;
     filter: blur(0);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(1);
+    transform: translate(-50%, -50%) rotate(-14deg) scale(1);
     opacity: 0.7;
     filter: blur(0);
   }
@@ -1071,25 +1101,145 @@
 }
 
 .cta-card h2 {
-  margin: 0 0 1.5rem;
-  color: var(--text);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
+  margin: 0;
+  color: #261334;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.04;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
-.cta-card p {
-  margin: 0 0 2.5rem;
-  color: var(--text-muted);
-  font-size: 1.25rem;
+.cta-eyebrow {
+  margin: 0 0 0.95rem;
+  width: fit-content;
+  padding: 0.34rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 23, 189, 0.28);
+  background: rgba(138, 23, 189, 0.09);
+  color: #6c168e;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cta-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.cta-copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.cta-lede {
+  margin: 0;
+  max-width: 35rem;
+  color: #4b3d5a;
+  font-size: clamp(1.02rem, 1.8vw, 1.22rem);
+  line-height: 1.58;
+}
+
+.cta-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.cta-points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  padding: 0.22rem 0.08rem;
+  color: #3d2d4f;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.cta-points .material-symbols-outlined {
+  font-size: 1.08rem;
+  color: #7a189f;
+}
+
+.cta-side {
+  display: grid;
+  gap: 0.62rem;
+  align-content: start;
+  padding: 1.15rem 1rem;
+  border-radius: 1rem 1.45rem 0.9rem 1.25rem;
+  border: 1px solid rgba(138, 23, 189, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.6) 100%);
+  box-shadow: 0 14px 24px -20px rgba(27, 16, 40, 0.62);
+}
+
+.cta-side-label {
+  margin: 0;
+  color: #6b21a8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cta-side-title {
+  margin: 0;
+  color: #2f1e41;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.cta-side-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.46rem;
+  width: fit-content;
+  color: #4f0f6d;
+  font-size: 1.06rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.cta-side-call .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.cta-side-note {
+  margin: 0;
+  color: #5f4f73;
+  font-size: 0.86rem;
 }
 
 .cta-actions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.cta .btn-primary {
+  background: #651085;
+  color: #ffffff;
+  box-shadow: 0 12px 26px -14px rgba(42, 8, 57, 0.74);
+}
+
+.cta .btn-primary:hover {
+  background: #581074;
+}
+
+.cta .btn-outline {
+  border-color: rgba(101, 16, 133, 0.35);
+  color: #4f0f6d;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.cta .btn-outline:hover {
+  border-color: rgba(101, 16, 133, 0.52);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .faq-section {
@@ -1322,6 +1472,10 @@
     flex-direction: row;
     justify-content: center;
   }
+
+  .cta-card .cta-actions {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1347,7 +1501,17 @@
   }
 
   .cta-card {
-    padding: 4rem;
+    padding: 2rem;
+  }
+
+  .cta-layout {
+    grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.8fr);
+    gap: 1.3rem;
+    align-items: end;
+  }
+
+  .cta-side {
+    min-height: 100%;
   }
 
   .footer-grid {
@@ -1413,15 +1577,44 @@
 
   .cta-wrap {
     max-width: none;
-    padding: 0;
+    padding: 0 0.15rem;
   }
 
   .cta-card {
-    border-radius: 0;
+    border-radius: 1.25rem 1.9rem 1.2rem 1.7rem;
   }
 
-  .cta-card p {
-    display: none;
+  .cta-card::before,
+  .cta-card::after {
+    left: 50%;
+    top: 38%;
+    width: min(64%, 252px);
+  }
+
+  .cta-card::before {
+    border-color: rgba(138, 23, 189, 0.22);
+    background: radial-gradient(circle at 50% 50%, rgba(138, 23, 189, 0.06) 0 46%, rgba(138, 23, 189, 0) 47% 100%);
+    box-shadow:
+      inset 0 0 0 14px rgba(138, 23, 189, 0.05),
+      inset 0 0 0 32px rgba(138, 23, 189, 0.08),
+      0 22px 28px -20px rgba(52, 8, 70, 0.16);
+  }
+
+  .cta-card::after {
+    color: rgba(94, 10, 130, 0.46);
+    text-shadow: none;
+  }
+
+  .cta-copy {
+    gap: 0.95rem;
+  }
+
+  .cta-card .cta-actions {
+    align-items: center;
+  }
+
+  .cta-points li {
+    font-size: 0.89rem;
   }
 
   .cta-card.stamp-down::before {
@@ -1431,32 +1624,32 @@
 
 @keyframes ctaStampDownMobile {
   0% {
-    transform: translate(-50%, -120%) rotate(-8deg) scale(1.42);
+    transform: translate(-50%, -128%) rotate(-12deg) scale(1.34);
     opacity: 0;
     filter: blur(1.8px);
   }
 
   48% {
-    transform: translate(-50%, -52%) rotate(-10deg) scale(0.78);
-    opacity: 0.42;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(0.8);
+    opacity: 0.16;
     filter: blur(0.3px);
   }
 
   64% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(1.08);
-    opacity: 0.31;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(1.06);
+    opacity: 0.12;
     filter: blur(0.1px);
   }
 
   78% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(0.96);
-    opacity: 0.36;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(0.95);
+    opacity: 0.14;
     filter: blur(0);
   }
 
   100% {
-    transform: translate(-50%, -50%) rotate(-10deg) scale(1);
-    opacity: 0.34;
+    transform: translate(-50%, -50%) rotate(-12deg) scale(1);
+    opacity: 0.1;
     filter: blur(0);
   }
 }
