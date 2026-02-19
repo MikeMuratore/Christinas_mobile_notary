@@ -25,7 +25,7 @@
     { selector: ".btn-header.book-now-trigger", type: "text", es: "Reservar Ahora" },
 
     { selector: ".hero-reviews span", type: "html", es: "<strong>4.9/5</strong> de 114+ resenas en Google" },
-    { selector: ".hero h1", type: "html", es: "Servicios Notariales Profesionales <span>Que Van Hasta Usted</span>" },
+    { selector: ".hero h1", type: "html", es: "Servicios de Notaria Movil <span>Que Van Hasta Usted</span>" },
     {
       selector: ".hero-content > p",
       type: "text",
@@ -44,19 +44,21 @@
     { selector: ".trust-grid .trust-stat:nth-child(4) .trust-label", type: "text", es: "Disponibilidad" },
 
     { selector: "#services .section-kicker", type: "text", es: "Nuestra Experiencia" },
-    { selector: "#services .section-title", type: "text", es: "Servicios Notariales Integrales" },
+    { selector: "#services .section-title", type: "text", es: "Servicios Integrales de Notaria Movil en Merced" },
     {
       selector: "#services .section-copy",
       type: "text",
-      es: "Desde documentos legales hasta firmas medicas y correccionales sensibles, manejamos cada cita con profesionalismo y discrecion."
+      es: "Desde documentos de patrimonio y paquetes de prestamo hasta firmas en hospitales y centros correccionales, atendemos cada cita con profesionalismo y discrecion."
     },
     { selector: '.services-grid .service-feature-card:nth-child(1) .service-feature-label', type: "text", es: "Apostilla" },
     { selector: '.services-grid .service-feature-card:nth-child(1) h4', type: "text", es: "Servicios de Apostilla" },
     { selector: '.services-grid .service-feature-card:nth-child(1) p', type: "text", es: "Autenticacion internacional de documentos con sellos conformes, seguimiento y preparacion de entrega." },
     { selector: '.services-grid .service-feature-card:nth-child(2) .service-feature-label', type: "text", es: "Patrimonio" },
+    { selector: '.services-grid .service-feature-card:nth-child(2) .service-most-requested', type: "text", es: "Mas Solicitado" },
     { selector: '.services-grid .service-feature-card:nth-child(2) h4', type: "text", es: "Firmas Notariales de Patrimonio" },
     { selector: '.services-grid .service-feature-card:nth-child(2) p', type: "text", es: "Testamentos, fideicomisos y poderes notariales con privacidad y sensibilidad." },
     { selector: '.services-grid .service-feature-card:nth-child(3) .service-feature-label', type: "text", es: "Prestamo" },
+    { selector: '.services-grid .service-feature-card:nth-child(3) .service-most-requested', type: "text", es: "Mas Solicitado" },
     { selector: '.services-grid .service-feature-card:nth-child(3) h4', type: "text", es: "Firmas de Prestamos" },
     { selector: '.services-grid .service-feature-card:nth-child(3) p', type: "text", es: "Flujos de firma estructurados para refinanciamiento, escrow y paquetes hipotecarios." },
     { selector: '.services-grid .service-feature-card:nth-child(4) .service-feature-label', type: "text", es: "Hospital" },
@@ -71,15 +73,15 @@
     { selector: ".service-direct-book-text", type: "text", es: "Reservar" },
 
     { selector: "#why-choose-us .section-kicker", type: "text", es: "La Ventaja" },
-    { selector: "#why-choose-us .section-title", type: "text", es: "Por Que Elegir a Christina's Mobile Notary?" },
-    { selector: "#why-choose-us .advantage-item:nth-child(1) h4", type: "text", es: "Voy Hasta Usted" },
-    { selector: "#why-choose-us .advantage-item:nth-child(1) p", type: "text", es: "Olvidese de buscar una oficina notarial. Me desplazo a su hogar, trabajo, cafeteria o ubicacion preferida." },
-    { selector: "#why-choose-us .advantage-item:nth-child(2) h4", type: "text", es: "Disponibilidad 24/7" },
-    { selector: "#why-choose-us .advantage-item:nth-child(2) p", type: "text", es: "La vida no ocurre de 9 a 5. Estoy disponible todo el dia, incluyendo fines de semana y dias festivos." },
+    { selector: "#why-choose-us .section-title", type: "text", es: "Confiable, Movil, Siempre Disponible" },
+    { selector: "#why-choose-us .advantage-item:nth-child(1) h4", type: "text", es: "Servicio Notarial Hasta Su Puerta" },
+    { selector: "#why-choose-us .advantage-item:nth-child(1) p", type: "text", es: "Sin trafico, sin salas de espera, sin visitas a oficina. Le atendemos donde sea mas conveniente para usted." },
+    { selector: "#why-choose-us .advantage-item:nth-child(2) h4", type: "text", es: "Disponible Noches, Fines de Semana y Festivos" },
+    { selector: "#why-choose-us .advantage-item:nth-child(2) p", type: "text", es: "Cuando el tiempo importa, estamos disponibles incluso fuera del horario comercial tradicional." },
     { selector: "#why-choose-us .advantage-item:nth-child(3) h4", type: "text", es: "Profesional y Confiable" },
-    { selector: "#why-choose-us .advantage-item:nth-child(3) p", type: "text", es: "Totalmente certificada, licenciada y afianzada en California. Me enfoco en precision y puntualidad." },
-    { selector: "#why-choose-us .advantage-item:nth-child(4) h4", type: "text", es: "Orgullosamente en Merced" },
-    { selector: "#why-choose-us .advantage-item:nth-child(4) p", type: "text", es: "Con raices en la comunidad, brindando servicios de confianza en Merced y ciudades cercanas." },
+    { selector: "#why-choose-us .advantage-item:nth-child(3) p", type: "text", es: "Licenciada, afianzada y verificada en California. Comprometida con la precision, confidencialidad y puntualidad." },
+    { selector: "#why-choose-us .advantage-item:nth-child(4) h4", type: "text", es: "Con Orgullo en Merced y Comunidades Cercanas" },
+    { selector: "#why-choose-us .advantage-item:nth-child(4) p", type: "text", es: "Con raices en la comunidad, brindamos un servicio de confianza en Merced y ciudades aledanas." },
     { selector: ".nav-app-topbar > span:nth-child(2)", type: "text", es: "Rumbo al cliente" },
     { selector: ".nav-eta-chip span", type: "text", es: "Condado de Merced" },
     { selector: ".nav-eta-chip strong", type: "text", es: "Notaria movil en camino" },
@@ -97,15 +99,15 @@
     { selector: "#service-area .section-title", type: "text", es: "Atendiendo Merced y Mas" },
     { selector: "#service-area .area-copy > p", type: "text", es: "Con base en Merced, ofrecemos servicios moviles a comunidades cercanas en todo el Condado de Merced." },
 
-    { selector: "#testimonials .section-kicker", type: "text", es: "Comentarios de Clientes" },
-    { selector: "#testimonials .section-title", type: "text", es: "Confianza en Servicio Profesional y Puntual" },
+    { selector: ".testimonials-rating-banner", type: "html", es: "<span aria-hidden=\"true\">&#11088;&#11088;&#11088;&#11088;&#11088;</span> 4.9 / 5 de 114+ resenas" },
+    { selector: "#testimonials .section-title", type: "text", es: "Calificacion de 5 Estrellas en Todo el Condado de Merced" },
     { selector: "#testimonials .section-copy", type: "text", es: "Experiencias reales de clientes del Condado de Merced que necesitaban notarizacion movil rapida y precisa." },
     { selector: ".testimonials-review-cta .review-cta-label", type: "text", es: "Dejar una Resena" },
     { selector: ".testimonial-badge", type: "text", es: "Cliente Verificado" },
     {
       selector: ".testimonial-feature blockquote",
       type: "text",
-      es: "\"Christina es muy flexible y pudo acomodarnos a mi esposo y a mi fuera de horario por su trabajo. Contacte a 3 notarios y ella fue la unica que me respondio. Estoy muy agradecida de que pudiera ayudarnos de ultimo minuto. Sin duda volveria a usar sus servicios.\""
+      es: "\"Christina es muy flexible y pudo acomodarnos a mi esposo y a mi fuera de horario por su trabajo. Contacte a 3 notarios y ella fue la unica que me respondio. Estoy muy agradecida de que pudiera ayudarnos de ultimo minuto.\""
     },
     {
       selector: ".testimonial-stack .testimonial-card:nth-child(1) p",
@@ -126,10 +128,10 @@
     { selector: ".testimonial-stack .testimonial-card:nth-child(2) .testimonial-chip", type: "text", es: "Visita a Hospital" },
     { selector: ".testimonial-stack .testimonial-card:nth-child(3) .testimonial-chip", type: "text", es: "Notaria General" },
 
-    { selector: ".cta-card h2", type: "text", es: "Necesita un Notario Ahora?" },
-    { selector: ".cta-card .cta-points li:nth-child(1) span:last-child", type: "text", es: "Despacho rapido para firmas urgentes" },
-    { selector: ".cta-card .cta-points li:nth-child(2) span:last-child", type: "text", es: "Licenciada, con fianza y precisa en cada detalle" },
-    { selector: ".cta-card .cta-points li:nth-child(3) span:last-child", type: "text", es: "Atendiendo Merced y comunidades cercanas" },
+    { selector: ".cta-card h2", type: "text", es: "Necesita un Notario Hoy?" },
+    { selector: ".cta-card .cta-points li:nth-child(1) span:last-child", type: "text", es: "Despacho el mismo dia y urgente disponible" },
+    { selector: ".cta-card .cta-points li:nth-child(2) span:last-child", type: "text", es: "Licenciada, afianzada y con verificacion de antecedentes" },
+    { selector: ".cta-card .cta-points li:nth-child(3) span:last-child", type: "text", es: "Atendiendo el Condado de Merced y zonas cercanas" },
     { selector: ".cta-actions .book-now-trigger", type: "text", es: "Reservar En Linea" },
 
     { selector: "#faq .section-eyebrow", type: "text", es: "Preguntas Frecuentes" },
