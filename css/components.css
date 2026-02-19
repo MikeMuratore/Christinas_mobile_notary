@@ -224,14 +224,15 @@
 }
 
 .site-header .btn-primary {
-  background: #f4f0ff;
-  color: #3f0b58;
-  box-shadow: 0 14px 24px -10px rgba(15, 9, 38, 0.42);
+  background: #ffffff;
+  color: #2f0644;
+  border-color: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 28px -12px rgba(15, 9, 38, 0.5);
 }
 
 .site-header .btn-primary:hover {
   filter: brightness(1);
-  background: #ffffff;
+  background: #f6f0ff;
 }
 
 .btn {

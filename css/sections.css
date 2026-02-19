@@ -62,7 +62,11 @@
 
 .hero.section-white::before {
   background:
-    linear-gradient(180deg, rgba(10, 6, 24, 0.34) 0%, rgba(10, 6, 24, 0.34) 100%),
+    linear-gradient(90deg,
+      rgba(8, 5, 20, 0.54) 0%,
+      rgba(8, 5, 20, 0.34) 35%,
+      rgba(8, 5, 20, 0.08) 65%,
+      rgba(8, 5, 20, 0) 78%),
     repeating-linear-gradient(62deg,
       rgba(255, 255, 255, 0.1) 0 1px,
       rgba(255, 255, 255, 0) 1px 14px),
@@ -70,7 +74,7 @@
     radial-gradient(circle at 76% 68%, rgba(26, 10, 44, 0.18) 0 1px, transparent 1px 100%);
   background-size: 100% 100%, auto, 3px 3px, 4px 4px;
   background-position: 0 0, 0 0, 0 0, 0 0;
-  opacity: 0.42;
+  opacity: 0.36;
   animation: heroTexturePan 11s linear infinite;
   will-change: background-position, transform;
 }
@@ -193,16 +197,18 @@
 .hero-visual {
   position: relative;
   padding: 1rem 1rem 1.2rem;
-  border-radius: 1.9rem 2.8rem 1.5rem 2.4rem;
+  border-radius: 2.2rem 3.1rem 1.8rem 2.7rem;
   background:
     radial-gradient(140% 150% at 8% 8%, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 54%),
     linear-gradient(132deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 45%, rgba(19, 7, 34, 0.34) 100%),
     rgba(29, 12, 46, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.36);
   box-shadow:
-    0 34px 68px -34px rgba(7, 4, 22, 0.86),
+    0 44px 86px -38px rgba(7, 4, 22, 0.92),
+    0 18px 36px -28px rgba(7, 4, 22, 0.62),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
   overflow: visible;
 }
 
@@ -221,7 +227,7 @@
 .hero-visual-frame {
   position: absolute;
   inset: 0.58rem 0.56rem 0.72rem;
-  border-radius: 1.55rem 2.35rem 1.15rem 1.95rem;
+  border-radius: 1.85rem 2.65rem 1.45rem 2.25rem;
   border: 1px solid rgba(255, 255, 255, 0.24);
   background:
     linear-gradient(130deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.03) 54%, rgba(24, 8, 38, 0.25) 100%);
@@ -244,10 +250,11 @@
   aspect-ratio: 5 / 4;
   object-fit: cover;
   object-position: 50% 22%;
-  border-radius: 1.25rem 2rem 1rem 1.65rem;
+  border-radius: 1.55rem 2.3rem 1.3rem 1.95rem;
   border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow:
-    0 28px 52px -28px rgba(7, 4, 19, 0.82),
+    0 36px 72px -32px rgba(7, 4, 19, 0.9),
+    0 18px 32px -26px rgba(7, 4, 19, 0.56),
     0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
@@ -270,11 +277,20 @@
   background: #ffffff;
   color: #3f0b58;
   box-shadow: 0 14px 26px -12px rgba(16, 11, 38, 0.44);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
 }
 
 .hero .btn-primary:hover {
   filter: brightness(1);
   background: #f9f6ff;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 32px -14px rgba(16, 11, 38, 0.56);
+}
+
+.hero-actions .btn-primary.btn-lg {
+  min-height: 3.75rem;
+  padding: 0 2.2rem;
+  font-size: 1.18rem;
 }
 
 .hero .btn-outline {
