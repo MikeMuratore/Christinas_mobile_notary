@@ -99,6 +99,7 @@
       heroBgVideo.style.opacity = "1";
       heroBgVideo.style.visibility = "visible";
     }
+    gsap.set(".hero-visual", { clearProps: "transform" });
   } else {
     // Refined first-impression timeline.
     const heroTl = gsap.timeline({ defaults: { ease: baseEase } });
@@ -125,17 +126,19 @@
     ease: "sine.inOut",
   });
 
-  // Hero parallax polish.
-  gsap.to(".hero-visual", {
-    y: -20,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1.2,
-    },
-  });
+  // Hero parallax polish (desktop/tablet only to avoid mobile load clipping).
+  if (!skipHeroTimelineOnMobile) {
+    gsap.to(".hero-visual", {
+      y: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.2,
+      },
+    });
+  }
 
   revealOnScroll(".trust-stat", { trigger: ".trust-bar", stagger: 0.11, y: 24 });
 
